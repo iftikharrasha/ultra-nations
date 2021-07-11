@@ -7,15 +7,24 @@ const Cart = (props) => {
     for (let i = 0; i < cart.length; i++) {
         const country = cart[i];
         totalPopulation += country.population;
-        
     }
 
     // let totalPopulation = cart.reduce((sum, country) => sum + country.population, 0);
     return (
-        <div>
-            <h2>This is a cart: {cart.length}</h2>
-            <p>Total Population: {totalPopulation}</p>
-        </div>
+        <>
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <strong>County added to basket: 
+                        </strong> {cart.length}
+                    </div> 
+                    <div>
+                        <strong>Population Count:
+                        </strong> {totalPopulation}
+                    </div>
+                </div>
+            </div>
+        </>
     );
 };
 
