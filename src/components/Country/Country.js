@@ -2,7 +2,7 @@ import React from 'react';
 import './Country.css';
 
 const Country = (props) => {
-    const {name, population, flag} = props.country;
+    const {name, flag} = props.country;
     const handleAddCountry = props.handleAddCountry;
 
     const flagStyle = {width: '80px', height: '50px'};
@@ -12,7 +12,6 @@ const Country = (props) => {
             <div className="country" style={countryStyle}>
                 <img style={flagStyle} src={flag} alt="flag"/>
                 <h4 className="py-3">{name}</h4>
-                <p>Polulation: {population}</p>
                 <button className="btn" onClick={() => handleAddCountry(props.country)}>WATCHLIST</button>
             </div>
         </div>

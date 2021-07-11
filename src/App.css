@@ -20,3 +20,7 @@
 	border-radius: 5px;
 	box-shadow: -3px -3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.945);
 }
+
+.c_custom {
+    max-width: 1440px !important;
+}

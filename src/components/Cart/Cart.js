@@ -4,7 +4,7 @@ import './Cart.css';
 
 const Cart = (props) => {
     const cart = props.cart;
-    console.log(cart);
+    // console.log(cart);
     
     let totalPopulation = 0;
     for (let i = 0; i < cart.length; i++) {
@@ -15,11 +15,6 @@ const Cart = (props) => {
     // let totalPopulation = cart.reduce((sum, country) => sum + country.population, 0);
     return (
         <>
-            <div id="accordion">
-                {
-                    cart.map(cartItem => <CartItem cartItem={cartItem} key={cartItem.alpha3Code}></CartItem>)
-                }
-            </div>
             <div className="card">
                 <div className="card-body">
                     <div>
@@ -27,10 +22,15 @@ const Cart = (props) => {
                         </strong> {cart.length}
                     </div> 
                     <div>
-                        <strong>Population Count:
+                        <strong>Total Population:
                         </strong> {totalPopulation}
                     </div>
                 </div>
+            </div>
+            <div id="accordion">
+                {
+                    cart.map(cartItem => <CartItem cartItem={cartItem} key={cartItem.alpha3Code}></CartItem>)
+                }
             </div>
         </>
     );

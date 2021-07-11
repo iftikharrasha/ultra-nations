@@ -26,13 +26,19 @@ const Home = () => {
   
     return (
         <>
-            <div className="container py-5">
-                <Cart cart={cart}></Cart>
+            <div className="container c_custom">
                 <h1 className="mt-5">Total Counties: {countries.length}</h1>
                 <div className="row py-5">
-                    {
-                        countries.map(country => <Country country={country} key={country.alpha3Code} handleAddCountry={handleAddCountry}></Country>)
-                    }
+                  <div className="col-md-8">
+                    <div className="row">
+                        {
+                          countries.map(country => <Country country={country} key={country.alpha3Code} handleAddCountry={handleAddCountry}></Country>)
+                        }
+                    </div>
+                  </div>
+                  <div className="col-md-4">
+                    <Cart cart={cart}></Cart>
+                  </div>
                 </div>
             </div>
         </>
