@@ -13,8 +13,8 @@ const Home = () => {
       .then(data => {
         setCountries(data);
         // console.log(data);
-        const names = data.map(country => country.name);
-        console.log(names);
+        // const names = data.map(country => country.name);
+        // console.log(names);
       })
       .catch(error => console.log(error))
     }, [])
@@ -27,8 +27,8 @@ const Home = () => {
     return (
         <>
             <div className="container py-5">
-                <h1>Total Counties: {countries.length}</h1>
                 <Cart cart={cart}></Cart>
+                <h1 className="mt-5">Total Counties: {countries.length}</h1>
                 <div className="row py-5">
                     {
                         countries.map(country => <Country country={country} key={country.alpha3Code} handleAddCountry={handleAddCountry}></Country>)

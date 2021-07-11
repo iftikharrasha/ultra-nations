@@ -1,8 +1,11 @@
 import React from 'react';
+import CartItem from '../CartItem/CartItem';
 import './Cart.css';
 
 const Cart = (props) => {
     const cart = props.cart;
+    console.log(cart);
+    
     let totalPopulation = 0;
     for (let i = 0; i < cart.length; i++) {
         const country = cart[i];
@@ -12,10 +15,15 @@ const Cart = (props) => {
     // let totalPopulation = cart.reduce((sum, country) => sum + country.population, 0);
     return (
         <>
-            <div class="card">
-                <div class="card-body">
+            <div id="accordion">
+                {
+                    cart.map(cartItem => <CartItem cartItem={cartItem} key={cartItem.alpha3Code}></CartItem>)
+                }
+            </div>
+            <div className="card">
+                <div className="card-body">
                     <div>
-                        <strong>County added to basket: 
+                        <strong>Total country added: 
                         </strong> {cart.length}
                     </div> 
                     <div>
